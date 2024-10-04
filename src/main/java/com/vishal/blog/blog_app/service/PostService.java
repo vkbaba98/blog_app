@@ -40,11 +40,12 @@ public class PostService {
 	public Posts getPost(int id) throws Exception {
 		Posts post=postRepo.findById(id).get();
 		Users user=post.getPublishBy();
+		System.out.println(user.getEmail()+" "+JwtFilter.username);
 		if(user.getEmail().equals(JwtFilter.username)) {
 			return post;
 		}
 		else {
-			throw new Exception("Not Eligible");
+			return new Posts();
 		}
 	}
 	

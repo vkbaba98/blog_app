@@ -28,8 +28,9 @@ public class GlobalPostController {
 		return postService.savePosts(postDto);
 	}
 	
-	@GetMapping("/id")
+	@GetMapping("/{id}")
 	public Posts getPost(@PathVariable int id) throws Exception {
+		System.out.println("Post Getting for {id}");
 		return postService.getPost(id);
 	}
 

@@ -33,7 +33,7 @@ public class Posts {
 	@Column(name="updated_on")
 	private Date updateOn;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne()
 	@JoinColumn(name="user_id" ,nullable=false)
 	private Users publishedBy;
 	public Posts() {
